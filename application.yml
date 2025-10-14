@@ -1,9 +1,13 @@
-<<<<<<< HEAD
-server.port=8888 
-=======
-server: 
-"  port: 8888" 
-spring: 
-"  application:" 
-"    name: config-server" 
->>>>>>> cbe2f188a90abe4ef853c9ef4622149cabba725f
+server:
+  port: 8888          # Config Server port
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ManikyaAnilkumar/config-repo
+          clone-on-start: true
+          default-label: main
